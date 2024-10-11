@@ -1,0 +1,19 @@
+p.verso{
+    color: blue;
+}
+
+p.mote{
+    color: red;
+}
+
+img.pb{
+    border-radius: 50%;
+}
+
+div.poeta img{
+    border-radius: 50%;
+}
+
+th{
+    background-color: aqua;
+}

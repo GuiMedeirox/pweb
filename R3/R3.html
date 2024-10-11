@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>   
+   <head>
+      <meta charset="UTF-8">      
+   </head>
+
+   <body>
+      <div id="meu amor">
+        <button id="botaoCarregar">Carregando cervejas...</button>
+      </div>
+      
+      
+      <div id="div2">
+        <p>Lista de cervejas</p>
+      </div>
+   </body>   
+
+   <script>
+      let count=0; 
+
+      function carregarDiv(){
+         let div = document.getElementById("div2");
+         div.innerHTML = `
+            <p>Heineken</p>
+            <p>Subzero</p>
+            <p>Glacial</p>
+         `
+
+         count++; 
+      }
+
+      let botao = document.getElementById("botaoCarregar")
+      botao.addEventListener("click", carregarDiv)                 
+
+      if(count!=0){
+        let div = document.getElementById("meu amor")
+        div.innerHTML=``
+        console.log(count);
+        
+      }
+
+   </script>
+
+</html>
