@@ -3,7 +3,7 @@
    <head>
       <meta charset="UTF-8"> 
       <style>
-         /* Estiliza as divs e a tabela */
+         /* peguei o estilo da tabela de algum site aleatório */
          table {
             width: 100%;
             border-collapse: collapse;
@@ -54,16 +54,16 @@
          }
 
          function ordenarCervejas() {
-            cervejas.sort(); // Ordena o array em ordem alfabética
-            carregarDiv(); // Atualiza o div com a tabela ordenada
+            cervejas.sort(); 
+            carregarDiv(); 
          }
 
          function embaralharCervejas() {
-            cervejas = cervejas.sort(() => Math.random() - 0.5); // Embaralha o array
-            carregarDiv(); // Atualiza o div com a tabela embaralhada
+            cervejas = cervejas.sort(() => Math.random() - 0.5); 
+            carregarDiv(); 
          }
 
-         // Eventos para os botões
+         
          document.getElementById("botaoCarregar").addEventListener("click", carregarDiv);
          document.getElementById("botaoOrdenar").addEventListener("click", ordenarCervejas);
          document.getElementById("botaoEmbaralhar").addEventListener("click", embaralharCervejas);
