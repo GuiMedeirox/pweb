@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ReactZero</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="app">
+    </div>
+    <script src="libs/react.js"></script>
+    <script src="libs/react-dom.js"></script>
+    <script>
+        ReactDOM.render(
+            React.createElement(
+                'table',
+                { id: 'tabela', border: '1' },
+                React.createElement(
+                    'tr',
+                    null,
+                    React.createElement('th', null, 'Carro1'),
+                    React.createElement('th', null, 'Carro2')
+                ),
+                React.createElement(
+                    'tr',
+                    null,
+                    React.createElement('td', null, 'Ford Focus'),
+                    React.createElement('td', null, 'Fiesta')
+                )
+            ),
+            document.getElementById("app"));
+    </script>
+</body>
+
+</html>

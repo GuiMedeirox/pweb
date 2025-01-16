@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Tabela Dinâmica de Drinks</title>      
+   </head>
+   <body>
+      <div id="app"></div>
+
+      <script src="libs/react.js"></script>
+      <script src="libs/react-dom.js"></script>
+      <script src="libs/babel.js"></script>
+            
+      <script type="text/babel">
+
+         
+         class Tabela extends React.Component {
+            render() {
+               const { cabecalhos, conteudo } = this.props;
+
+               return (
+                  <div>
+                     <h1>Tabela de Drinks</h1>
+                     <table border="1">
+                        <thead>
+                           <tr>
+                              {cabecalhos.map((cabecalho, index) => (
+                                 <th key={index}>{cabecalho}</th>
+                              ))}
+                           </tr>
+                        </thead>
+                        <tbody>
+                           {conteudo.map((linha, index) => (
+                              <tr key={index}>
+                                 {linha.map((coluna, colIndex) => (
+                                    <td key={colIndex}>{coluna}</td>
+                                 ))}
+                              </tr>
+                           ))}
+                        </tbody>
+                     </table>
+                  </div>
+               );
+            }
+         }
+
+         
+         const cabecalhos = ["Nome do Drink", "Ingredientes", "Dificuldade"];
+         const conteudo = [
+            ["Cuba Libre", "Rum, Cola, Limão", "Fácil"],
+            ["Mojito", "Rum, Hortelã, Limão, Açúcar, Club Soda", "Média"],
+            ["Caipirinha", "Cachaça, Limão, Açúcar", "Fácil"],
+            ["Margarita", "Tequila, Triple Sec, Limão", "Média"],
+            ["Piña Colada", "Rum, Leite de Coco, Suco de Abacaxi", "Média"],
+         ];
+
+         
+         ReactDOM.render(
+            <Tabela cabecalhos={cabecalhos} conteudo={conteudo} />,
+            document.getElementById("app")
+         );
+
+      </script>
+   </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>React Um</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="app">
+    </div>
+    <script src="libs/react.js"></script>
+    <script src="libs/react-dom.js"></script>
+    <script src="libs/babel.js"></script>
+
+    <script type="text/babel">
+        function TabelaBebidas() {
+            return (
+                <div>
+                    <table id="tabela">
+                        <thead>
+                            <tr><th>Nome</th><th>Marca</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Havana</td><td>Engenho Anísio Santiago</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            );
+        }
+
+        function Cabecalho() {
+            return <h1>Tabela</h1>;
+        }
+
+        const bebidas = [
+    { nome: "Golden Spirit", marca: "Aurora Drinks Co." },
+    { nome: "Old Wolf", marca: "Timber Distillers" },
+    { nome: "Sunrise Reserve", marca: "Vista Spirits" },
+    { nome: "Blue Frost", marca: "Polar Beverages" },
+    { nome: "Crystal Bloom", marca: "Eden Liquors" },
+    { nome: "Cachaça Brisa", marca: "Brisa Distillers" },
+    { nome: "Caribbean Reserve 10 anos", marca: "Tropica Club" },
+    { nome: "Iron Barrel", marca: "Steel Spirits" },
+    { nome: "Emerald Breeze", marca: "Gemstone Distillers" },
+];
+
+        function TabelaBebidasComArray() {
+            const [showTable, setShowTable] = React.useState(true);
+
+            const toggleTable = () => {
+                setShowTable(!showTable);
+            };
+
+            const returnToInitialView = () => {
+                setShowTable(true);
+            };
+
+            return (
+                <div>
+                    {showTable ? (
+                        <div>
+                            <table id="tabela" border="1">
+                                <thead>
+                                    <tr><th>Nome</th><th>Marca</th></tr>
+                                </thead>
+                                <tbody>
+                                    {bebidas.map((bebida, index) => (
+                                        <tr key={index}>
+                                            <td>{bebida.nome}</td>
+                                            <td>{bebida.marca}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                            <button id="comeback" onClick={toggleTable}>Voltar</button>
+                        </div>
+                    ) : (
+                        <div>
+                            <Cabecalho />
+                            <button onClick={returnToInitialView} >exibir tabela</button>
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
+        function App() {
+            const handleButtonClick = () => {
+                ReactDOM.render(
+                    <TabelaBebidasComArray />,
+                    document.getElementById("app")
+                );
+            };
+
+            return (
+                <div>
+                    <Cabecalho />
+                    <button onClick={handleButtonClick}>Mostrar Tabela</button>
+                </div>
+            );
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.getElementById("app")
+        );
+    </script>
+</body>
+
+</html>
