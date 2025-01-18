@@ -9,3 +9,11 @@ export default function Home() {
     </div>
   );
 }
+
+export function Saudacao() {
+  return <p>Olá! Esta é uma saudação reutilizável.</p>;
+}
+
+export function Despedida() {
+  return <p>Até logo! Volte sempre.</p>;
+}

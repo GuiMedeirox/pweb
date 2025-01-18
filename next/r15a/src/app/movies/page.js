@@ -2,7 +2,7 @@ export default async function Home({ searchParams }) {
   const { titleSearchKey = "bagdad" } = await searchParams;
 
   const res = await fetch(
-    `http://www.omdbapi.com/?apikey=f1cbc41e&s=${titleSearchKey}`
+    `http://www.omdbapi.com/?apikey=7e0e045c&s=${titleSearchKey}`
   );
 
   const data = await res.json();
