@@ -13,7 +13,7 @@ export default function Home() {
     const titleSearchKey = formData.get("titleSearchKey");
 
     const httpRes = await fetch(
-      `http://www.omdbapi.com/?apikey=f1cbc41e&s=${titleSearchKey}`
+      `http://www.omdbapi.com/?apikey=7e0e045c&s=${titleSearchKey}`
     );
     const jsonRes = await httpRes.json();
 
